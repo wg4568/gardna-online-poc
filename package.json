@@ -1,17 +1,19 @@
 {
-    "name": "typescript-gamedev",
+    "name": "gardna-online",
     "version": "1.0.0",
     "description": "",
     "main": "build/server/main.js",
     "scripts": {
         "build:client": "tsc -p ./tsconfig.client.json",
         "build:server": "tsc -p ./tsconfig.server.json",
-        "build:all": "npm run build:client;npm run build:server",
+        "build:all": "npm run build:client && npm run build:server",
         "reset:client": "npx trash ./static/js/client.js",
         "reset:server": "npx trash ./build",
-        "reset:all": "npm run reset:client;npm run reset:server",
-        "start": "npm run build:all;npm run start:nobuild",
-        "start:nobuild": "node build/server/main.js"
+        "reset:all": "npm run reset:client && npm run reset:server",
+        "start": "npm run build:all && npm run start:nobuild",
+        "start:full": "npm run reset:all && npm run build:all && npm run start:nobuild",
+        "start:nobuild": "node build/server/main.js",
+        "start:quick": "npm run build:server && npm run start:nobuild"
     },
     "author": "",
     "license": "ISC",

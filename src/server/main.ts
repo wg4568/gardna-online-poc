@@ -14,6 +14,10 @@ app.get("/", (req, res) => {
     });
 });
 
+app.get("/favicon.ico", (req, res) => {
+    res.sendFile("img/favicon.ico", { root: "static" });
+});
+
 server.on("upgrade", (request, socket, head) => {
     gameServer.handleUpgrade(request, socket, head, (socket) => {
         gameServer.emit("connection", socket, request);
