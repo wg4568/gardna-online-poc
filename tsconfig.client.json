@@ -1,0 +1,9 @@
+{
+    "extends": "./tsconfig.json",
+    "include": ["src/client", "src/common"],
+    "compilerOptions": {
+        "noEmit": false,
+        "outFile": "static/js/client.js",
+        "module": "none"
+    }
+}
