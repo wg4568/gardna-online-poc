@@ -1,3 +1,5 @@
-build
 node_modules
-static/js/client.js
+static/js/app.js
+build
+config.json
+.prettierrc

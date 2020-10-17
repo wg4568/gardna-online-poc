@@ -1,6 +1,3 @@
-import { resourceUsage } from "process";
-import { resourceLimits } from "worker_threads";
-
 export class Renderer {
     canvas: HTMLCanvasElement;
     ctx: CanvasRenderingContext2D;

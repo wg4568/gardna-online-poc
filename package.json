@@ -1,34 +1,30 @@
 {
-    "name": "gardna-online",
+    "name": "game-template",
     "version": "1.0.0",
     "description": "",
-    "main": "build/server/main.js",
+    "main": "index.js",
     "scripts": {
-        "build:client": "tsc -p ./tsconfig.client.json",
+        "start": "npm run refresh && npm run build:client && npm run build:server && node ./build/src/server/main.js",
+        "refresh": "trash ./build && trash ./static/js/app.js",
         "build:server": "tsc -p ./tsconfig.server.json",
-        "build:all": "npm run build:client && npm run build:server",
-        "reset:client": "npx trash ./static/js/client.js",
-        "reset:server": "npx trash ./build",
-        "reset:all": "npm run reset:client && npm run reset:server",
-        "start": "npm run build:all && npm run start:nobuild",
-        "start:full": "npm run reset:all && npm run build:all && npm run start:nobuild",
-        "start:nobuild": "node build/server/main.js",
-        "start:quick": "npm run build:server && npm run start:nobuild"
+        "build:client": "webpack"
     },
     "author": "",
     "license": "ISC",
     "dependencies": {
+        "@types/express": "^4.17.8",
+        "@types/twig": "^1.12.4",
+        "@types/ws": "^7.2.7",
         "express": "^4.17.1",
         "twig": "^1.15.2",
-        "typescript": "^4.0.3",
         "ws": "^7.3.1"
     },
     "devDependencies": {
-        "@types/express": "^4.17.8",
-        "@types/node": "^14.11.8",
-        "@types/twig": "^1.12.4",
-        "@types/ws": "^7.2.7",
         "prettier": "^2.1.2",
-        "trash-cli": "^3.1.0"
+        "trash-cli": "^3.1.0",
+        "ts-loader": "^8.0.5",
+        "typescript": "^4.0.3",
+        "webpack": "^5.1.3",
+        "webpack-cli": "^4.0.0"
     }
 }

@@ -1,10 +1,14 @@
 import express from "express";
-import http from "http";
 import Twig from "twig";
+import http from "http";
+
+import config from "../../config.json";
 import gameServer from "./server";
 
 const app = express();
 const server = http.createServer(app);
+
+Twig.cache(config.debug);
 
 app.use("/static", express.static("static"));
 
@@ -24,6 +28,8 @@ server.on("upgrade", (request, socket, head) => {
     });
 });
 
-app.listen(3000, () => {
-    console.log("Server listening");
+app.listen(config.port, () => {
+    console.log(
+        `Webserver listening on port ${config.port}, debug=${config.debug}`
+    );
 });

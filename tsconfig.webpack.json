@@ -3,7 +3,6 @@
     "include": ["src/client", "src/common"],
     "compileOnSave": true,
     "compilerOptions": {
-        "noEmit": false,
-        "outDir": "static/js",
+        "noEmit": false
     }
 }
