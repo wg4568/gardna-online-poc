@@ -1,7 +1,6 @@
 {
     "extends": "./tsconfig.json",
     "include": ["src/client", "src/common"],
-    "compileOnSave": true,
     "compilerOptions": {
         "noEmit": false
     }

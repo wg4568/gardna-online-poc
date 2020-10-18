@@ -1,10 +1,38 @@
+import { RandomInt } from "./helpers";
+
 export class Vector2 {
-    private _x: number;
-    private _y: number;
+    x: number;
+    y: number;
 
     constructor(x: number, y: number) {
-        this._x = x;
-        this._y = y;
+        this.x = x;
+        this.y = y;
+    }
+
+    get a() {
+        return this.x;
+    }
+
+    get b() {
+        return this.y;
+    }
+
+    set a(val: number) {
+        this.x = val;
+    }
+
+    set b(val: number) {
+        this.y = val;
+    }
+
+    static Empty() {
+        return new Vector2(0, 0);
+    }
+
+    static Random(xmin: number, xmax: number, ymin: number, ymax: number) {
+        var x = RandomInt(xmin, xmax);
+        var y = RandomInt(ymin, ymax);
+        return new Vector2(x, y);
     }
 
     static Add(v1: Vector2, v2: Vector2) {
@@ -21,37 +49,5 @@ export class Vector2 {
 
     static Div(v1: Vector2, v2: Vector2) {
         return new Vector2(v1.a * v2.a, v1.b * v2.b);
-    }
-
-    get x() {
-        return this._x;
-    }
-
-    get y() {
-        return this._y;
-    }
-
-    get a() {
-        return this._x;
-    }
-
-    get b() {
-        return this._y;
-    }
-
-    set x(val) {
-        this._x = val;
-    }
-
-    set y(val) {
-        this._y = val;
-    }
-
-    set a(val) {
-        this._x = val;
-    }
-
-    set b(val) {
-        this._y = val;
     }
 }

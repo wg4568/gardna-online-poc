@@ -19,6 +19,7 @@ module.exports = {
         extensions: [".tsx", ".ts", ".js"]
     },
     output: {
+        library: "GardnaOnline",
         filename: "app.js",
         path: path.resolve(__dirname, "static/js")
     },
